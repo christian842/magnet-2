@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCSE Revision Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Application controls">
+      <div>
+        <p class="eyebrow">Study smarter</p>
+        <h1>GCSE Revision Tracker</h1>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+        <span aria-hidden="true">🌙</span>
+        <span>Dark mode</span>
+      </button>
+    </nav>
+    <section class="hero-grid" aria-label="Revision summary">
+      <article class="stat-card">
+        <span>Total revised</span>
+        <strong id="totalHours">0h</strong>
+      </article>
+      <article class="stat-card">
+        <span>Current streak</span>
+        <strong id="currentStreak">0 days</strong>
+      </article>
+      <article class="stat-card">
+        <span>Best streak</span>
+        <strong id="bestStreak">0 days</strong>
+      </article>
+    </section>
+  </header>
+
+  <main class="app-shell">
+    <section class="panel form-panel" aria-labelledby="sessionFormTitle">
+      <div class="section-heading">
+        <p class="eyebrow">Log revision</p>
+        <h2 id="sessionFormTitle">Add a study session</h2>
+      </div>
+      <form id="sessionForm">
+        <label>
+          Subject
+          <select id="subject" required></select>
+        </label>
+        <label>
+          Date
+          <input id="date" type="date" required />
+        </label>
+        <label>
+          Duration (minutes)
+          <input id="duration" type="number" min="1" step="1" placeholder="e.g. 45" required />
+        </label>
+        <label class="full-width">
+          Topic
+          <input id="topic" type="text" maxlength="80" placeholder="e.g. Algebra equations" required />
+        </label>
+        <button class="primary-button" type="submit">Add session</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="progressTitle">
+      <div class="section-heading inline-heading">
+        <div>
+          <p class="eyebrow">Progress</p>
+          <h2 id="progressTitle">Subject totals</h2>
+        </div>
+        <p class="hint">Goal: <span id="goalHoursLabel">20</span>h per subject</p>
+      </div>
+      <div class="subjects-grid" id="subjectsGrid"></div>
+    </section>
+
+    <section class="panel history-panel" aria-labelledby="historyTitle">
+      <div class="section-heading inline-heading">
+        <div>
+          <p class="eyebrow">History</p>
+          <h2 id="historyTitle">Recent sessions</h2>
+        </div>
+        <button class="ghost-button" id="clearData" type="button">Clear all</button>
+      </div>
+      <div id="emptyState" class="empty-state">
+        <strong>No sessions yet.</strong>
+        <span>Add your first revision session to see totals, streaks and progress.</span>
+      </div>
+      <ul class="session-list" id="sessionList" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

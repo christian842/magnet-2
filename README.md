@@ -1,31 +1,30 @@
+# GCSE Revision Tracker
 
-> Open this page at [https://christian842.github.io/magnet-2/](https://christian842.github.io/magnet-2/)
+A responsive GCSE revision tracker built with plain HTML, CSS and JavaScript. It runs entirely in the browser and saves study data locally with `localStorage`.
 
-## Use as Extension
+## Features
 
-This repository can be added as an **extension** in MakeCode.
+- Tracks GCSE subjects: Maths, English, Biology, Chemistry, Physics, Geography, History, German and RE.
+- Adds study sessions with a subject, date, duration and topic.
+- Shows total hours revised overall and per subject.
+- Calculates current and best daily revision streaks.
+- Displays progress bars against a 20-hour goal for each subject.
+- Saves sessions and theme preference locally in the browser.
+- Includes a dark mode toggle.
+- Uses a responsive, modern card-based layout for desktop and mobile.
 
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/christian842/magnet-2** and import
+## How to run
 
-## Edit this project ![Build status badge](https://github.com/christian842/magnet-2/workflows/MakeCode/badge.svg)
+Open `index.html` directly in a browser, or serve the folder locally:
 
-To edit this repository in MakeCode.
+```bash
+python3 -m http.server 8000
+```
 
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/christian842/magnet-2** and click import
+Then visit [http://localhost:8000](http://localhost:8000).
 
-## Blocks preview
+## Files
 
-This image shows the blocks code from the last commit in master.
-This image may take a few minutes to refresh.
-
-![A rendered view of the blocks](https://github.com/christian842/magnet-2/raw/master/.github/makecode/blocks.png)
-
-#### Metadata (used for search, rendering)
-
-* for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+- `index.html` - application structure and form controls.
+- `styles.css` - responsive layout, progress bars and light/dark themes.
+- `script.js` - subject tracking, streak calculations, localStorage persistence and rendering.
